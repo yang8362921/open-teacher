@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.cn/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-sans: "Noto Sans SC", "YouYuan", "Microsoft YaHei", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-serif: "Noto Serif SC", "Songti SC", "SimSun", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --shadow-2xs: 0 1px 2px oklch(0.40 0.05 60 / 0.03);
+  --shadow-xs: 0 1px 2px oklch(0.40 0.05 60 / 0.03);
+  --shadow-sm: 0 1px 3px oklch(0.40 0.05 60 / 0.04), 0 1px 2px oklch(0.40 0.05 60 / 0.02);
+  --shadow-md: 0 2px 6px oklch(0.40 0.05 60 / 0.05), 0 1px 3px oklch(0.40 0.05 60 / 0.03);
+  --shadow-lg: 0 4px 12px oklch(0.40 0.05 60 / 0.06), 0 2px 6px oklch(0.40 0.05 60 / 0.03);
+  --shadow-xl: 0 8px 20px oklch(0.40 0.05 60 / 0.06), 0 4px 10px oklch(0.40 0.05 60 / 0.03);
+  --shadow-2xl: 0 12px 28px oklch(0.40 0.05 60 / 0.08);
+  --animate-breathe: breathe 4s ease-in-out infinite;
+  --animate-warm-float: warm-float 6s ease-in-out infinite;
+  --animate-gentle-pulse: gentle-pulse 3s ease-in-out infinite;
+  --animate-slide-up: slide-up 0.5s ease-out;
+}
+
+:root {
+  /*
+   * 米白温馨配色 — 像一杯温热拿铁
+   * 整体沉浸在暖奶白色调，主色为低饱和度暖棕
+   */
+  --background: oklch(0.965 0.012 80);      /* 米白底色：像加了奶的拿铁 */
+  --foreground: oklch(0.22 0.025 50);        /* 深棕文字：像深烘焙咖啡豆 */
+  --card: oklch(0.98 0.007 82);              /* 纯净奶白卡片 */
+  --card-foreground: oklch(0.22 0.025 50);
+  --popover: oklch(0.98 0.007 82);
+  --popover-foreground: oklch(0.22 0.025 50);
+  --primary: oklch(0.55 0.10 45);            /* 暖陶土棕：像赤陶花盆 */
+  --primary-foreground: oklch(0.98 0.005 85); /* 奶白文字 */
+  --secondary: oklch(0.94 0.018 80);         /* 淡奶茶色 */
+  --secondary-foreground: oklch(0.28 0.03 50);
+  --muted: oklch(0.93 0.014 78);             /* 温暖浅灰棕 */
+  --muted-foreground: oklch(0.50 0.025 55);  /* 中度暖灰 */
+  --accent: oklch(0.92 0.035 75);            /* 浅杏色强调 */
+  --accent-foreground: oklch(0.25 0.03 45);
+  --destructive: oklch(0.55 0.18 22);
+  --destructive-foreground: oklch(0.98 0.005 85);
+  --border: oklch(0.91 0.012 78);            /* 暖灰边框 */
+  --input: oklch(0.91 0.012 78);
+  --ring: oklch(0.55 0.10 45);
+  --chart-1: oklch(0.72 0.08 75);            /* 浅杏 */
+  --chart-2: oklch(0.60 0.09 55);            /* 暖棕 */
+  --chart-3: oklch(0.50 0.08 45);            /* 陶土 */
+  --chart-4: oklch(0.40 0.06 40);            /* 深棕 */
+  --chart-5: oklch(0.30 0.04 35);            /* 浓咖啡 */
+  --sidebar: oklch(0.955 0.015 80);
+  --sidebar-foreground: oklch(0.22 0.025 50);
+  --sidebar-primary: oklch(0.55 0.10 45);
+  --sidebar-primary-foreground: oklch(0.98 0.005 85);
+  --sidebar-accent: oklch(0.93 0.014 78);
+  --sidebar-accent-foreground: oklch(0.25 0.03 45);
+  --sidebar-border: oklch(0.91 0.012 78);
+  --sidebar-ring: oklch(0.55 0.10 45);
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: oklch(0.18 0.012 55);
+  --foreground: oklch(0.94 0.01 75);
+  --card: oklch(0.22 0.015 55);
+  --card-foreground: oklch(0.94 0.01 75);
+  --popover: oklch(0.22 0.015 55);
+  --popover-foreground: oklch(0.94 0.01 75);
+  --primary: oklch(0.65 0.10 50);
+  --primary-foreground: oklch(0.14 0.02 55);
+  --secondary: oklch(0.27 0.015 55);
+  --secondary-foreground: oklch(0.94 0.01 75);
+  --muted: oklch(0.24 0.012 55);
+  --muted-foreground: oklch(0.65 0.02 60);
+  --accent: oklch(0.28 0.03 58);
+  --accent-foreground: oklch(0.94 0.01 75);
+  --destructive: oklch(0.58 0.18 22);
+  --destructive-foreground: oklch(0.98 0.005 85);
+  --border: oklch(0.30 0.012 55);
+  --input: oklch(0.30 0.012 55);
+  --ring: oklch(0.65 0.10 50);
+  --chart-1: oklch(0.72 0.08 75);
+  --chart-2: oklch(0.60 0.09 55);
+  --chart-3: oklch(0.50 0.08 45);
+  --chart-4: oklch(0.40 0.06 40);
+  --chart-5: oklch(0.30 0.04 35);
+  --sidebar: oklch(0.20 0.015 55);
+  --sidebar-foreground: oklch(0.94 0.01 75);
+  --sidebar-primary: oklch(0.65 0.10 50);
+  --sidebar-primary-foreground: oklch(0.14 0.02 55);
+  --sidebar-accent: oklch(0.24 0.012 55);
+  --sidebar-accent-foreground: oklch(0.94 0.01 75);
+  --sidebar-border: oklch(0.30 0.012 55);
+  --sidebar-ring: oklch(0.65 0.10 50);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* ====== Warm & Cozy Animations ====== */
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes warm-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes digital-human-ripple {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.08); opacity: 0.3; }
+  100% { transform: scale(1.12); opacity: 0; }
+}
+
+/* ====== Warm UI Utility Classes — 米白温馨系 ====== */
+
+/* 暖光渐变背景：像晨光洒在米白墙面上 */
+.warm-gradient-bg {
+  background:
+    radial-gradient(ellipse at 15% 0%, oklch(0.55 0.10 45 / 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 100%, oklch(0.72 0.08 75 / 0.03) 0%, transparent 50%);
+}
+
+/* 暖色卡片：柔和奶白 + 淡暖阴影 */
+.warm-card {
+  background: var(--card);
+  border: 1px solid oklch(0.91 0.012 78 / 0.5);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 12px oklch(0.40 0.05 60 / 0.04), 0 1px 3px oklch(0.40 0.05 60 / 0.02);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.warm-card:hover {
+  border-color: oklch(0.55 0.10 45 / 0.15);
+  box-shadow: 0 4px 20px oklch(0.40 0.05 60 / 0.06), 0 2px 6px oklch(0.40 0.05 60 / 0.02);
+}
+
+/* 暖色主按钮 */
+.warm-button-primary {
+  background: oklch(0.55 0.10 45);
+  color: oklch(0.98 0.005 85);
+  border: none;
+  box-shadow: 0 2px 8px oklch(0.40 0.05 60 / 0.10);
+  transition: all 0.25s ease;
+}
+.warm-button-primary:hover {
+  background: oklch(0.50 0.11 45);
+  box-shadow: 0 4px 16px oklch(0.40 0.05 60 / 0.14);
+  transform: translateY(-1px);
+}
+
+/* 通话按钮：温暖的邀请光环 */
+.warm-button-call {
+  background: radial-gradient(circle at 40% 40%, oklch(0.55 0.10 45 / 0.10), oklch(0.55 0.10 45 / 0.05));
+  border: 1.5px solid oklch(0.55 0.10 45 / 0.25);
+  box-shadow: 0 0 20px oklch(0.55 0.10 45 / 0.08);
+  transition: all 0.3s ease;
+}
+.warm-button-call:hover {
+  border-color: oklch(0.55 0.10 45 / 0.45);
+  box-shadow: 0 0 30px oklch(0.55 0.10 45 / 0.14);
+  transform: translateY(-1px);
+}
+
+/* 数字人头像暖色光环 */
+.warm-glow-border {
+  border: 1px solid oklch(0.55 0.10 45 / 0.15);
+  box-shadow: 0 0 12px oklch(0.55 0.10 45 / 0.06);
+}
+
+.warm-glow-border-active {
+  border: 1.5px solid oklch(0.55 0.10 45 / 0.30);
+  box-shadow: 0 0 20px oklch(0.55 0.10 45 / 0.10), 0 0 40px oklch(0.55 0.10 45 / 0.04);
+  animation: gentle-pulse 3s ease-in-out infinite;
+}
+
+/* 呼吸动画 */
+.warm-breathe-ring {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.55 0.10 45 / 0.15);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.55 0.10 45 / 0.28);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: oklch(0.65 0.10 50 / 0.20);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.65 0.10 50 / 0.35);
+}
