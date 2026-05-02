@@ -1,5 +1,7 @@
 # OpenTeacher - 开放智慧助教
 
+![OpenTeacher 封面](assets/cover.png)
+
 基于国产大模型的智能教学助手系统
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
